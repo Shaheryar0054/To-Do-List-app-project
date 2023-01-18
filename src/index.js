@@ -1,48 +1,25 @@
 import './style.css';
 
-const InnerTodo = document.querySelector('.todo-inner-content');
+import display from './module/todo.js';
 
-const ToDo = [
-  {
-    description: 'Learn webpack',
-    tasksCompleted: false,
-    index: 0,
-  },
-  {
-    description: 'DOM',
-    tasksCompleted: false,
-    index: 1,
-  },
-  {
-    description: 'Learn javscript',
-    tasksCompleted: false,
-    index: 2,
-  },
-  {
-    description: 'Learn HTML',
-    tasksCompleted: false,
-    index: 3,
-  },
-];
+const edittodoForm = document.querySelector('#edit-todo-item');
+const enterBtn = document.querySelector('.enter-btn');
+const editTodoFormInput = document.querySelector('.todo-edit-input');
 
-let display = ' ';
-const populateHtml = (item) => {
-  item.forEach((elem) => {
-    display += `
-    <div class="todo-tick flex">
-    <div class="checkbox">
-      <input
-        type="checkbox"
-        id="to-do-check"
-        name="To-Do"
-        value="Add"
-      />
-      <label for="todo">${elem.description}</label><br/>
-    </div>
-    <i class="fa-solid fa-ellipsis-vertical"></i>
-  </div>
-  <hr />`;
-  });
-  InnerTodo.innerHTML = display;
-};
-populateHtml(ToDo);
+window.addEventListener('DOMContentLoaded', () => {
+  const task = display.getTodoList();
+  display.populateTodo(task);
+});
+
+enterBtn.addEventListener('click', () => {
+  display.addTodoList();
+});
+
+edittodoForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const id = Number(editTodoFormInput.getAttribute('id'));
+  display.updateTaskInput(editTodoFormInput.value, id);
+  editTodoFormInput.value = '';
+  document.querySelector('.type-task').style.display = 'block';
+  edittodoForm.style.display = 'none';
+});
