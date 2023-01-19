@@ -49,7 +49,6 @@ body {
 
 /* icon */
 i {
-  cursor: all-scroll;
   border: none;
   background: none;
   display: flex;
@@ -148,7 +147,7 @@ i {
 }
 
 /* text checkbox */
-input[type=checkbox]:checked+label {
+input[type=checkbox]:checked + label {
   text-decoration: line-through;
 }
 
