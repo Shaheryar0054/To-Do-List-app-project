@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/a2da67af29.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>To Do list</title>
-  <script defer src="/runtime.bundle.js"></script><script defer src="/index.bundle.js"></script></head>
-  <body>
-    <div class="main-content">
-      <div>
-        <div class="todo-txt flex">
-          <h1>Today's To Do</h1>
-          <i class="fa-solid fa-rotate"></i>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Awesome To Do List</title>
+<script defer src="/runtime.bundle.js"></script><script defer src="/index.bundle.js"></script></head>
+
+<!-- body starts here -->
+
+<body>
+
+<!-- To do list starts here -->
+
+    <div id="toDoList">
+        <div class="title">
+            <h1 class="ttdl">Today's To Do List</h1>
+            <i class="fa fa-arrows-rotate icon"></i>
         </div>
-        <hr />
-        <div>
-          <form action="" method="post" id="todo-form">
-            <div class="todo-custom flex">
-              <input
-                type="text"
-                class="no-outline"
-                placeholder="Add to your list..."
-              />
-              <i class="fa-solid fa-turn-down-left fa-5xl"></i>
-            </div>
-            <hr />
-            <div class="todo-inner-content"></div>
-            <div class="clear-data">
-              <h3>Clear all Completed</h3>
-            </div>
-          </form>
+        <form id="inputList" action="#" method="post">
+        <div class="inputTask">
+        <input id="addList" type="text" placeholder="Add to your to do list..." maxlength="80" required>
+        <button class="submiticon" type="submit"> <i class="fa fa-arrow-turn-down icon"></i> </button>
         </div>
-      </div>
+        </form>
+        <div class="toDoListContainer"></div>
+<!-- button clear starts here -->
+        <button id="btnClear" type="submit">Clear Completed Tasks</button>
     </div>
-  </body>
+
+<!-- To do list ends here -->
+
+    <script src="../dist/main.js"></script>
+
+<!-- body ends here -->
+
+</body>
 </html>
