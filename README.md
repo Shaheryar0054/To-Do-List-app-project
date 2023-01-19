@@ -20,11 +20,11 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [To-do-list-app] <a name="about-project"></a>
+# 📖 [To-do-list-app-interactive] <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
-**[To-do-list-app]** In this project we build simple application that have ability to add and remove books
+**[To-do-list-app-interactive]** In this project we build simple application that have ability to add and remove books
 
 ## 🛠 Built With <a name="built-with"></a>
 

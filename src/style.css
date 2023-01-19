@@ -1,112 +1,214 @@
-body {
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 20px;
-  box-sizing: border-box;
-  background: #f3f2f2;
 }
 
-/* CSS for main Div */
+body {
+  background-color: rgb(246, 246, 246);
+}
 
-.main-content {
+/* todolist list base */
+#toDoList {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: auto;
+  margin: 300px auto auto auto;
+  background-color: white;
+  box-shadow: 0 4px 20px 30px rgba(0, 0, 0, 0.137);
+}
+
+::placeholder {
+  font-family: 'inter', sans-serif;
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* title base */
+.title {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 23px;
+  padding-left: 10px;
+  height: 50px;
+}
+
+/* h1 text */
+.ttdl {
+  font-family: 'inter', sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  font-style: normal;
+  padding-top: 8px;
+}
+
+/* icon */
+i {
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+/* task list base */
+#inputList {
+  justify-content: space-between;
+  align-items: center;
   background-color: #fff;
-  border-radius: 5px;
-  margin: 10% 10%;
-  box-shadow: 3px 3px 3px 3px gray;
+  height: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
-/* CSS for line */
-
-hr {
-  border: 0.1px solid #f3f2f2;
-  margin: 0;
+.inputTask {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  border-top: 1px solid gray;
+  height: 50px;
+  padding: 0 10px;
 }
 
-/* CSS for heading */
-
-h2 {
-  font-size: 22px;
-  font-weight: normal;
+/* refresh icon */
+.inputTask i {
+  rotate: 90deg;
+  cursor: pointer;
 }
 
-/* CSS for input fields */
+/* input text  */
+#addList {
+  width: 100%;
+  height: 45px;
+  border: none;
+}
 
+.submiticon {
+  padding: 2px;
+}
+
+.remove-edit {
+  display: flex;
+  justify-items: flex-end;
+  margin-left: auto;
+  padding-right: 23px;
+  text-decoration: none;
+}
+
+/* Clear task button */
+#btnClear {
+  height: 50px;
+  color: rgb(147, 147, 147);
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  border-top: 1px solid gray;
+  font-size: 18px;
+  font-family: 'inter', sans-serif;
+  cursor: pointer;
+}
+
+/* task list base */
+.list {
+  background: #fff;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 50px;
+  border-top: 1px solid gray;
+  padding-left: 10px;
+  list-style: none;
+}
+
+/* text */
+.tasks label {
+  font-family: 'inter', sans-serif;
+  padding-left: 10px;
+  width: 100%;
+}
+
+/* text */
+.lists li:nth-child(3) {
+  display: flex;
+  justify-items: flex-end;
+  margin-left: auto;
+  padding-right: 15px;
+  text-decoration: none;
+}
+
+/* text checkbox */
 input[type=checkbox]:checked + label {
   text-decoration: line-through;
 }
 
+/* text */
 input {
-  border: 0;
-  outline: 0;
-  padding: 0.2rem;
+  font-family: 'inter', sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 100;
 }
 
+/* text */
 input:focus {
-  outline: none !important;
+  outline: none;
 }
 
-.listed-task {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
+/* text */
+.text {
+  height: 45px;
+  width: 95%;
+  padding-left: 5px;
+  border: none;
+  font-family: 'inter', sans-serif;
+  font-size: 15px;
 }
 
-.flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.textcompleted {
+  text-decoration: line-through;
+  border: none;
+  font-size: 17px;
+  height: 45px;
+  width: 95%;
+  padding-left: 5px;
+  color: #9b9b9b;
 }
 
-.todo-txt,
-.todo-custom,
-.todo-check {
-  padding: 1rem 1.5rem;
+/* edit button */
+.edit_list_btn {
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
-/* CSS for checkBox */
+/* remove button */
+.remove_btn {
+  cursor: pointer;
+  display: none;
+  border: none;
+  background: none;
+}
 
 .checkbox {
-  display: flex;
-  align-items: center;
-}
-
-#to-do-check {
-  margin-right: 1rem;
-}
-
-i {
   cursor: pointer;
-  color: gray;
 }
 
-.clear-data {
-  padding: 1rem 0;
-  background: #f3f2f2;
-  height: auto;
-  text-align: center;
-}
-
-.heading-btn {
-  cursor: pointer;
-  font-weight: normal;
-  color: gray;
-  margin: 0;
-}
-
-.clear-data:hover {
-  text-decoration: underline;
-  color: #000;
-}
-
-::placeholder {
-  font-style: italic;
-  font-size: 20px;
-}
-
-.check-icons {
+.to-do {
+  background: #fff;
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
-  justify-content: center;
+  padding-left: 10px;
+  list-style: none;
+  border-bottom: 0.01px solid #d3d3d3;
 }
