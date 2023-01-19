@@ -1,25 +1,26 @@
+// import _ from 'lodash';
 import './style.css';
 
-import display from './module/todo.js';
+// import from src modules
+import display from './methods.js';
+import Interactive from './interactive.js';
 
-const edittodoForm = document.querySelector('#edit-todo-item');
-const enterBtn = document.querySelector('.enter-btn');
-const editTodoFormInput = document.querySelector('.todo-edit-input');
+const inputList = document.getElementById('inputList');
+const addList = document.getElementById('addList');
 
-window.addEventListener('DOMContentLoaded', () => {
-  const task = display.getTodoList();
-  display.populateTodo(task);
-});
-
-enterBtn.addEventListener('click', () => {
-  display.addTodoList();
-});
-
-edittodoForm.addEventListener('submit', (e) => {
+inputList.addEventListener('submit', (e) => {
   e.preventDefault();
-  const id = Number(editTodoFormInput.getAttribute('id'));
-  display.updateTaskInput(editTodoFormInput.value, id);
-  editTodoFormInput.value = '';
-  document.querySelector('.type-task').style.display = 'block';
-  edittodoForm.style.display = 'none';
+  display.addLists(addList.value);
+  addList.value = '';
 });
+
+document.querySelector('#btnClear').addEventListener('click', Interactive.clearCompletedToDoLists);
+
+window.addEventListener('load', () => {
+  document.addEventListener('listUpdated', () => {
+    Interactive.checkStatusEvent();
+  }, false);
+  Interactive.checkStatusEvent();
+});
+
+display.showLists();
